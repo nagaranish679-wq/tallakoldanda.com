@@ -1,0 +1,976 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ==================================================
+   Tallo Koldanda Village Website
+   Mount Everest Youth Club
+   Full Updated CSS
+================================================== */
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* THEME COLORS */
+:root {
+  --primary: #0b4f3a;
+  --primary-dark: #052f1d;
+  --primary-light: #157a55;
+  --secondary: #0f8a9d;
+  --accent: #f7c948;
+
+  --bg: #f6fbf8;
+  --green-bg: #e8f6ee;
+  --white: #ffffff;
+  --black: #111827;
+  --text: #33443c;
+  --gray: #5f6f65;
+  --border: #d9e7df;
+
+  --shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  --shadow-hover: 0 22px 45px rgba(0, 0, 0, 0.18);
+}
+
+/* BASIC STYLE */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', 'Noto Sans Devanagari', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--black);
+  line-height: 1.7;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--primary-dark);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ==================================================
+   HEADER / NAVBAR
+================================================== */
+
+header {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  color: var(--white);
+  padding: 12px 50px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.22);
+}
+
+.navbar {
+  max-width: 1250px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+/* LOGO LEFT */
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo-img {
+  width: 78px;
+  height: 78px;
+  border-radius: 20px;
+  object-fit: cover;
+  background: var(--white);
+  padding: 4px;
+  border: 3px solid var(--accent);
+  box-shadow: 0 8px 18px rgba(247, 201, 72, 0.35);
+  transition: 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+}
+
+.logo-text h1 {
+  font-size: 27px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--white);
+  letter-spacing: 0.3px;
+}
+
+.logo-text p {
+  font-size: 14px;
+  color: #d8f4e4;
+  font-weight: 500;
+  margin-top: 3px;
+}
+
+/* NAV RIGHT */
+nav {
+  margin-left: auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 10px 15px;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background: var(--accent);
+  color: var(--primary-dark);
+}
+
+/* ==================================================
+   HOME HERO BACKGROUND
+   Image file: village-bg.jpeg
+================================================== */
+
+.hero {
+  min-height: 88vh;
+  background:
+    linear-gradient(rgba(3, 35, 22, 0.35), rgba(3, 35, 22, 0.65)),
+    url("village-bg.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 75px 25px;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background: linear-gradient(to top, var(--bg), transparent);
+}
+
+.hero-content {
+  max-width: 920px;
+  position: relative;
+  z-index: 2;
+  padding: 34px 36px;
+  border-radius: 30px;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(3px);
+  animation: fadeUp 1s ease;
+}
+
+.hero h2 {
+  font-size: 62px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  text-shadow: 0 6px 22px rgba(0, 0, 0, 0.75);
+}
+
+.hero h3 {
+  font-size: 31px;
+  color: var(--accent);
+  font-weight: 800;
+  margin-bottom: 22px;
+  text-shadow: 0 5px 16px rgba(0, 0, 0, 0.65);
+}
+
+.hero p {
+  max-width: 800px;
+  margin: 0 auto 34px;
+  font-size: 20px;
+  color: #eef8f0;
+  text-shadow: 0 4px 14px rgba(0, 0, 0, 0.65);
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  background: var(--accent);
+  color: var(--primary-dark);
+  padding: 14px 32px;
+  border-radius: 999px;
+  font-weight: 800;
+  box-shadow: 0 12px 25px rgba(247, 201, 72, 0.35);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--white);
+  color: var(--primary-dark);
+  transform: translateY(-4px);
+}
+
+/* ==================================================
+   COMMON SECTIONS
+================================================== */
+
+section {
+  padding: 85px 50px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-title h2 {
+  display: inline-block;
+  color: var(--primary);
+  font-size: 39px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.section-title h2::after {
+  content: "";
+  display: block;
+  width: 78px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 10px;
+  margin: 12px auto 0;
+}
+
+.section-title p {
+  max-width: 800px;
+  margin: auto;
+  color: var(--gray);
+  font-size: 16px;
+}
+
+.green-bg {
+  background:
+    radial-gradient(circle at top left, rgba(15, 138, 157, 0.12), transparent 35%),
+    linear-gradient(135deg, #e8f6ee, #f9fff9);
+}
+
+/* ==================================================
+   CARDS
+================================================== */
+
+.cards {
+  max-width: 1150px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.card {
+  background: var(--white);
+  padding: 35px 28px;
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+.card::before {
+  content: "";
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+}
+
+.icon {
+  width: 78px;
+  height: 78px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--green-bg), #ffffff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 38px;
+  box-shadow: inset 0 0 0 3px rgba(11, 79, 58, 0.08);
+}
+
+.card h3 {
+  color: var(--primary);
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: var(--gray);
+  font-size: 15px;
+}
+
+/* ==================================================
+   ABOUT / CLUB TWO-COLUMN SECTIONS
+================================================== */
+
+.about-container,
+.contact-container {
+  max-width: 1150px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 46px;
+  align-items: center;
+}
+
+.about-text {
+  background: var(--white);
+  padding: 38px;
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  border-left: 7px solid var(--accent);
+}
+
+.about-text h3 {
+  color: var(--primary);
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.about-text p {
+  color: var(--text);
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+.about-image {
+  background: var(--white);
+  padding: 12px;
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+}
+
+.about-image img {
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+  border-radius: 22px;
+}
+
+/* Better logo image on club page */
+.about-image img[src="logo.jpeg"] {
+  object-fit: contain;
+  padding: 35px;
+  background: #ffffff;
+}
+
+/* ==================================================
+   MEMORIAL / LOCAL HERO SECTION
+================================================== */
+
+.memorial-section {
+  background:
+    radial-gradient(circle at top left, rgba(15, 138, 157, 0.12), transparent 35%),
+    linear-gradient(135deg, #e8f6ee, #f9fff9);
+}
+
+.memorial-container {
+  max-width: 1150px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.memorial-image {
+  background: var(--white);
+  padding: 14px;
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+}
+
+.memorial-image img {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 22px;
+}
+
+.memorial-text {
+  background: var(--white);
+  padding: 38px;
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  border-left: 7px solid var(--accent);
+}
+
+.memorial-text h3 {
+  color: var(--primary);
+  font-size: 31px;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.memorial-text p {
+  color: var(--text);
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+/* DETAILS BOX */
+.memorial-details {
+  background: linear-gradient(135deg, #e8f6ee, #ffffff);
+  padding: 20px 22px;
+  border-radius: 18px;
+  margin-bottom: 22px;
+  border-left: 5px solid var(--primary);
+  box-shadow: inset 0 0 0 1px rgba(11, 79, 58, 0.08);
+}
+
+.memorial-details p {
+  margin-bottom: 9px;
+  color: var(--text);
+  text-align: left;
+  font-size: 15px;
+}
+
+.memorial-details p:last-child {
+  margin-bottom: 0;
+}
+
+.memorial-details strong {
+  color: var(--primary);
+  font-weight: 800;
+}
+
+/* ==================================================
+   CLUB PAGE EXTRA SECTIONS
+================================================== */
+
+.club-highlight {
+  max-width: 1150px;
+  margin: auto;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: var(--white);
+  padding: 42px;
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.club-highlight h3 {
+  font-size: 30px;
+  margin-bottom: 14px;
+  color: var(--accent);
+}
+
+.club-highlight p {
+  max-width: 850px;
+  margin: auto;
+  color: #eaf8ef;
+  font-size: 16px;
+}
+
+.club-list {
+  max-width: 900px;
+  margin: auto;
+  background: var(--white);
+  padding: 35px;
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  border-left: 7px solid var(--accent);
+}
+
+.club-list ul {
+  list-style: none;
+}
+
+.club-list ul li {
+  margin-bottom: 14px;
+  padding-left: 34px;
+  position: relative;
+  color: var(--text);
+  font-size: 16px;
+}
+
+.club-list ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--primary);
+  font-weight: 800;
+  background: var(--green-bg);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==================================================
+   GALLERY PAGE
+================================================== */
+
+.gallery-grid {
+  max-width: 1150px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 275px;
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  transition: all 0.35s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.04);
+  box-shadow: var(--shadow-hover);
+}
+
+/* ==================================================
+   VIDEO SECTION - UPDATED FOR 3 MP4 VIDEOS
+================================================== */
+
+.video-section {
+  background:
+    radial-gradient(circle at top left, rgba(15, 138, 157, 0.12), transparent 35%),
+    linear-gradient(135deg, #e8f6ee, #f9fff9);
+}
+
+.video-grid {
+  max-width: 1150px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.video-container {
+  background: var(--white);
+  padding: 12px;
+  border-radius: 26px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  transition: all 0.35s ease;
+}
+
+.video-container:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.video-container video {
+  width: 100%;
+  height: 430px;
+  object-fit: contain;
+  border-radius: 20px;
+  display: block;
+  background: #000;
+}
+
+/* ==================================================
+   EVENTS PAGE
+================================================== */
+
+.event-list {
+  max-width: 1150px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.event-box {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 22px;
+  border-left: 7px solid var(--secondary);
+  box-shadow: var(--shadow);
+  transition: all 0.35s ease;
+}
+
+.event-box:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+}
+
+.event-box h3 {
+  color: var(--primary);
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.event-box span {
+  display: inline-block;
+  background: var(--green-bg);
+  color: var(--primary);
+  padding: 6px 13px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.event-box p {
+  color: var(--gray);
+}
+
+/* ==================================================
+   CONTACT PAGE
+================================================== */
+
+.contact-info,
+.contact-form {
+  background: var(--white);
+  padding: 38px;
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.contact-info {
+  border-left: 7px solid var(--accent);
+}
+
+.contact-info h3,
+.contact-form h3 {
+  color: var(--primary);
+  font-size: 27px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+.contact-info strong {
+  color: var(--primary);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  border: 1px solid #ccdcd2;
+  border-radius: 14px;
+  outline: none;
+  font-size: 15px;
+  font-family: 'Poppins', 'Noto Sans Devanagari', Arial, sans-serif;
+  transition: all 0.3s ease;
+  background: #fbfffc;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 4px rgba(15, 138, 157, 0.14);
+  background: var(--white);
+}
+
+.contact-form textarea {
+  min-height: 145px;
+  resize: vertical;
+}
+
+.contact-form button {
+  border: none;
+  background: var(--primary);
+  color: var(--white);
+  padding: 14px 30px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: var(--secondary);
+  transform: translateY(-3px);
+}
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  color: var(--white);
+  text-align: center;
+  padding: 34px 20px;
+}
+
+footer p {
+  color: #e5f7ea;
+  margin-bottom: 7px;
+  font-size: 15px;
+}
+
+/* ==================================================
+   ANIMATION
+================================================== */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================================================
+   RESPONSIVE DESIGN
+================================================== */
+
+@media (max-width: 1050px) {
+  header {
+    padding: 14px 25px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav {
+    margin-left: 0;
+  }
+
+  nav ul {
+    justify-content: center;
+  }
+
+  .hero h2 {
+    font-size: 46px;
+  }
+
+  .hero h3 {
+    font-size: 26px;
+  }
+
+  .cards,
+  .gallery-grid,
+  .event-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .video-container video {
+    height: 450px;
+  }
+
+  .about-container,
+  .contact-container,
+  .memorial-container {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image img,
+  .memorial-image img {
+    height: 360px;
+  }
+}
+
+@media (max-width: 650px) {
+  header {
+    position: relative;
+    padding: 14px 18px;
+  }
+
+  .logo-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo-img {
+    width: 92px;
+    height: 92px;
+    border-radius: 20px;
+  }
+
+  .logo-text h1 {
+    font-size: 23px;
+  }
+
+  .logo-text p {
+    font-size: 13px;
+  }
+
+  nav ul {
+    gap: 7px;
+  }
+
+  nav ul li a {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .hero {
+    min-height: 78vh;
+    background-attachment: scroll;
+    background-position: center top;
+    padding: 60px 20px;
+  }
+
+  .hero-content {
+    padding: 24px 18px;
+  }
+
+  .hero h2 {
+    font-size: 34px;
+  }
+
+  .hero h3 {
+    font-size: 21px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  section {
+    padding: 55px 20px;
+  }
+
+  .section-title h2 {
+    font-size: 30px;
+  }
+
+  .cards,
+  .gallery-grid,
+  .event-list,
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-text,
+  .contact-info,
+  .contact-form,
+  .memorial-text,
+  .club-highlight,
+  .club-list {
+    padding: 25px;
+  }
+
+  .about-image img,
+  .gallery-grid img,
+  .memorial-image img {
+    height: 245px;
+  }
+
+  .about-image img[src="logo.jpeg"] {
+    height: 245px;
+    padding: 25px;
+  }
+
+  .memorial-image,
+  .about-image {
+    padding: 10px;
+  }
+
+  .video-grid {
+    gap: 24px;
+  }
+
+  .video-container {
+    padding: 10px;
+    border-radius: 22px;
+  }
+
+  .video-container video {
+    width: 100%;
+    height: 420px;
+    object-fit: contain;
+    border-radius: 18px;
+    background: #000;
+  }
+
+  .memorial-text h3,
+  .club-highlight h3 {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero h2 {
+    font-size: 29px;
+  }
+
+  .section-title h2 {
+    font-size: 26px;
+  }
+
+  .card,
+  .event-box {
+    padding: 25px 20px;
+  }
+
+  .memorial-details {
+    padding: 15px;
+  }
+
+  .memorial-details p {
+    font-size: 14px;
+  }
+
+  .video-container video {
+    height: 360px;
+  }
+}
